@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>PDF in HTML</title>
+    <style>
+        .pdf {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+        }
+
+        .pdf,
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1,
+        h3 {
+            text-align: center;
+        }
+
+        h1 {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>GeeksforGeeks</h1>
+    <h3>Embedding the PDF file Using Iframe Tag</h3>
+
+    <!-- Input and button for constructing PDF URL -->
+    <div style="text-align: center;">
+        <input type="text" id="inputthing" placeholder="Enter PDF name or path">
+        <button onclick="loadPDF()">Load PDF</button>
+    </div>
+
+    <!-- PDF Display -->
+    <iframe class="pdf" id="pdfIframe" width="800" height="500"></iframe>
+    <!-- <iframe src="https://drive.google.com/file/d/1lARf0v1_lkyjkYFGIkR0dIdSs5GK4QST/preview" width="640" height="480" allow="autoplay"></iframe> -->
+
+    <script>
+        function loadPDF() {
+            var baseurl = "cert123455.pdf"; // Replace with your base URL
+            var inputthing = document.getElementById("inputthing").value; // Get the user input
+            var pdfurl = baseurl + inputthing; // Construct the full URL
+            document.getElementById("pdfIframe").src = baseurl; // Set the iframe src to the new URL
+        }
+    </script>
+</body>
+
+</html>
